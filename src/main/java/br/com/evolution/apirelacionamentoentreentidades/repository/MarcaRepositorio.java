@@ -7,5 +7,7 @@ import br.com.evolution.apirelacionamentoentreentidades.model.Marca;
 
 @Repository
 public interface MarcaRepositorio extends CrudRepository<Marca, Long> {
+
+    public Marca findByCodigo(long codigo);
     
 }

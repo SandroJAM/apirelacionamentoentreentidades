@@ -7,5 +7,7 @@ import br.com.evolution.apirelacionamentoentreentidades.model.Produto;
 
 @Repository
 public interface ProdutoRespositorio extends CrudRepository<Produto, Long> {
+
+    public Produto findByCodigo(long codigo);
     
 }
