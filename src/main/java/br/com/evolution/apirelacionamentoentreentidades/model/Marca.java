@@ -24,7 +24,7 @@ public class Marca {
     
     private String marca;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "marcas")
     private List<Produto> produtos = new ArrayList<>();
     
 }

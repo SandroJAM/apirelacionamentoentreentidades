@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -27,6 +29,11 @@ public class Produto {
     private double preco;
 
     @ManyToMany
+    @JoinTable(
+        name = "marcas_produtos",
+        joinColumns = {@JoinColumn(name = "codigo_marca", referencedColumnName = "codigo")},
+        inverseJoinColumns = {@JoinColumn(name = "codigo_produto", referencedColumnName = "codigo")}
+    )
     private List<Marca> marcas = new ArrayList<>();
     
 }
